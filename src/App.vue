@@ -6,6 +6,8 @@
       <router-link to="/students/:id">Student</router-link>
       |
       <router-link to="/students/:id/resume/edit">Update Resume</router-link>
+      |
+      <router-link to="/students/:id/edit">Edit Student Info</router-link>
     </div>
     <router-view />
   </div>
