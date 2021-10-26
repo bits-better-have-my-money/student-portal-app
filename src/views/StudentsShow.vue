@@ -1,5 +1,5 @@
 <template>
-  <div class="student-show">
+  <div class="students-show">
     <div>
       <h1>{{ currentStudent.first_name }} {{ currentStudent.last_name }}</h1>
       <p>{{ currentStudent.image_url }}</p>
