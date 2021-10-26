@@ -30,6 +30,7 @@ export default {
     axios.get(`/students/${this.$route.params.id}`).then((response) => {
       console.log(response.data);
       this.currentStudent = response.data;
+    });
   },
   methods: {
     // editStudentInfo: function () {
