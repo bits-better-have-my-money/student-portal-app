@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Login from "../views/Login.vue";
 import StudentShow from "../views/StudentShow.vue";
+import StudentsResumeEdit from "../views/StudentsResumeEdit.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -11,17 +12,14 @@ const routes = [
     component: Login,
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    path: "/students/:id",
+    name: "students-show",
+    component: StudentShow,
   },
   {
-    path: "/student/:id",
-    name: "student-show",
-    component: StudentShow,
+    path: "/students/:id/resume/edit",
+    name: "students-resume-edit",
+    component: StudentsResumeEdit,
   },
 ];
 
