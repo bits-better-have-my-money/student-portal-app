@@ -8,17 +8,23 @@
       <div>
         <h2>Experience</h2>
         <label>Start Date:</label>
-        <input type="date" v-model="editResumeParams.start_date" />
+        <input type="date" v-model="editExperienceParams.start_date" />
+        <br />
         <label>End Date:</label>
-        <input type="date" v-model="editResumeParams.end_date" />
+        <input type="date" v-model="editExperienceParams.end_date" />
+        <br />
         <label>Job Title:</label>
-        <input type="string" v-model="editResumeParams.job_title" />
+        <input type="string" v-model="editExperienceParams.job_title" />
+        <br />
         <label>Company Name:</label>
-        <input type="string" v-model="editResumeParams.company_name" />
+        <input type="string" v-model="editExperienceParams.company_name" />
+        <br />
         <label>Details:</label>
-        <input type="text" v-model="editResumeParams.details" />
+        <input type="text" v-model="editExperienceParams.details" />
+        <br />
       </div>
       <input type="submit" value="Update" />
+      <input type="submit" value="Delete" />
     </form>
   </div>
 </template>
@@ -34,31 +40,31 @@
 </style>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 export default {
   data: function () {
     return {
-      editResumeParams: {},
+      editExperienceParams: {},
       errors: [],
     };
   },
   created: function () {
-    // axios.get(`/students/${this.$route.params.id}`).then((response) => {
-    //   console.log(response.data);
-    //   this.editResumeParams = response.data;
-    // });
+    axios.get(`/experiences/${this.$route.params.id}`).then((response) => {
+      console.log(response.data);
+      this.editExperienceParams = response.data;
+    });
   },
   methods: {
-    editPost: function () {
-      // axios
-      // .patch(`/posts/${this.editResumeParams.id}`, this.editResumeParams)
-      // .then((response) => {
-      //   console.log("resume edit", response);
-      //   this.$router.push(`/students/${this.editResumeParams.id}`);
-      // })
-      // .catch((error) => {
-      //   this.errors = error.response.data.errors;
-      // });
+    editExperience: function () {
+      axios
+        .patch(`/experiences/${this.editExperienceParams.id}`, this.editExperienceParams)
+        .then((response) => {
+          console.log("Experience edit", response);
+          this.$router.push(`/students/${this.editExperienceParams.student_id}`);
+        })
+        .catch((error) => {
+          this.errors = error.response.data.errors;
+        });
     },
   },
 };
