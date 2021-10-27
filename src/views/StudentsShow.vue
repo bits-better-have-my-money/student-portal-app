@@ -2,7 +2,10 @@
   <div class="students-show">
     <div>
       <h1>{{ currentStudent.first_name }} {{ currentStudent.last_name }}</h1>
-      <p>{{ currentStudent.image_url }}</p>
+      <img
+        v-bind:src="currentStudent.image_url"
+        v-bind:alt="currentStudent.name"
+      />
       <p>{{ currentStudent.email }}</p>
       <p>{{ currentStudent.phone_number }}</p>
       <p>{{ currentStudent.bio }}</p>
@@ -18,6 +21,15 @@
         <h3>{{ experience.job_title }}</h3>
         <p>{{ experience.start_date }} - {{ experience.end_date }}</p>
         <p>{{ experience.details }}</p>
+      </div>
+    </div>
+    <div>
+      <h1>Education</h1>
+      <div v-for="education in educations" v-bind:key="education.id">
+        <h2>{{ education.university_name }}</h2>
+        <h3>{{ education.degree }}</h3>
+        <p>{{ education.start_date }} - {{ education.end_date }}</p>
+        <p>{{ education.details }}</p>
       </div>
     </div>
   </div>
@@ -43,13 +55,24 @@ export default {
         blog_url: "blog.com/bob",
         github_url: "github.com/bob",
       },
-      experience: {
-        start_date: 01 / 01 / 21,
-        end_date: 12 / 13 / 21,
-        job_title: "Package Handler",
-        company_title: "Fedex Ground",
-        details: "loads and unloads packages from trucks",
-      },
+      experiences: [
+        {
+          start_date: "01 / 01 / 21",
+          end_date: "12 / 13 / 21",
+          job_title: "Package Handler",
+          company_title: "Fedex Ground",
+          details: "loads and unloads packages from trucks",
+        },
+      ],
+      educations: [
+        {
+          start_date: "01 / 01 / 20",
+          end_date: "12 / 13 / 20",
+          degree: "Art",
+          university_name: "UWEC",
+          details: "made some art in college",
+        },
+      ],
     };
   },
   created: function () {
@@ -59,7 +82,11 @@ export default {
     });
     axios.get("/experiences/" + this.$route.params.id).then((response) => {
       console.log("student experiences", response);
-      this.experience = response.data;
+      this.experiences = response.data;
+    });
+    axios.get("/educations/" + this.$route.params.id).then((response) => {
+      console.log("student experiences", response);
+      this.educations = response.data;
     });
   },
   methods: {},
