@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Login from "../views/Login.vue";
 import StudentsShow from "../views/StudentsShow.vue";
-import StudentsResumeEdit from "../views/StudentsResumeEdit.vue";
+import ExperiencesEdit from "../views/ExperiencesEdit.vue";
 import StudentsEdit from "../views/StudentsEdit.vue";
 
 Vue.use(VueRouter);
@@ -19,9 +19,9 @@ const routes = [
     component: StudentsShow,
   },
   {
-    path: "/students/:id/resume/edit",
-    name: "students-resume-edit",
-    component: StudentsResumeEdit,
+    path: "/experiences/:id/edit",
+    name: "experiences-edit",
+    component: ExperiencesEdit,
   },
   {
     path: "/students/:id/edit",

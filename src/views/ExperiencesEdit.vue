@@ -1,5 +1,5 @@
 <template>
-  <div class="students-resume-edit">
+  <div class="experiences-edit">
     <form v-on:submit.prevent="editResume()">
       <h1>Update Resume</h1>
       <ul>
