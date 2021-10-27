@@ -23,8 +23,8 @@
         <input type="text" v-model="editExperienceParams.details" />
         <br />
       </div>
-      <input type="submit" value="Update" />
-      <input type="submit" value="Delete" />
+      <input v-on:click="editExperience()" type="submit" value="Update" />
+      <input v-on:click="destroyExperience()" type="submit" value="Delete" />
     </form>
   </div>
 </template>
@@ -60,6 +60,17 @@ export default {
         .patch(`/experiences/${this.editExperienceParams.id}`, this.editExperienceParams)
         .then((response) => {
           console.log("Experience edit", response);
+          this.$router.push(`/students/${this.editExperienceParams.student_id}`);
+        })
+        .catch((error) => {
+          this.errors = error.response.data.errors;
+        });
+    },
+    destroyExperience: function () {
+      axios
+        .delete(`/experiences/${this.editExperienceParams.id}`)
+        .then((response) => {
+          console.log("Experience destroyed", response);
           this.$router.push(`/students/${this.editExperienceParams.student_id}`);
         })
         .catch((error) => {
