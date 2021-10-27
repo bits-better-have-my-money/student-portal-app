@@ -69,6 +69,7 @@ export default {
   data: function () {
     return {
       currentStudent: {
+        id: 1,
         first_name: "Bob",
         last_name: "Smith",
         image_url:
@@ -92,6 +93,7 @@ export default {
         ],
         educations: [
           {
+            id: 1,
             start_date: "01 / 01 / 20",
             end_date: "12 / 13 / 20",
             degree: "Art",
@@ -99,9 +101,13 @@ export default {
             details: "made some art in college",
           },
         ],
-        skills: [],
+        skills: [
+          { id: 1, name: "Ruby" },
+          { id: 2, name: "Rails" },
+        ],
         capstones: [
           {
+            id: 1,
             name: "Hideaway Huts",
             description: "AirBnb for tiny homes",
             capstone_url: "github.com/bobsmith/hideaway-huts",
