@@ -54,7 +54,7 @@
         <h2>{{ capstone.name }}</h2>
         <h3>{{ capstone.description }}</h3>
         <p>{{ capstone.capstone_url }}</p>
-        <p>{{ capstone.screenshot }}</p>
+        <img v-bind:src="capstone.screenshot" v-bind:alt="capstone.name" />
       </div>
     </div>
   </div>
@@ -105,7 +105,7 @@ export default {
             description: "AirBnb for tiny homes",
             capstone_url: "github.com/bobsmith/hideaway-huts",
             screenshot:
-              "https://www.istockphoto.com/photo/dog-using-laptop-computer-gm1049887368-280769742?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Ftiny-home-website&utm_term=tiny%20home%20website%3A%3Asearch-aggressive-affiliates-v1%3Aa",
+              "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.creekwalkcommunity.com%2Fuploads%2F1%2F2%2F6%2F1%2F126144893%2F5-orig_orig.jpg&imgrefurl=https%3A%2F%2Fwww.creekwalkcommunity.com%2Fhomes.html&tbnid=ce34Ps6id8kxuM&vet=12ahUKEwjD68znnuvzAhUFb80KHUw7AB8QMygJegUIARDjAg..i&docid=tPiNGDDYvU61dM&w=1100&h=619&itg=1&q=tiny%20home&ved=2ahUKEwjD68znnuvzAhUFb80KHUw7AB8QMygJegUIARDjAg",
           },
         ],
       },
