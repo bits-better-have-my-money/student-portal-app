@@ -1,9 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Login from "../views/Login.vue";
-import StudentsShow from "../views/StudentsShow.vue";
-Vue.use(VueRouter);
+import StudentShow from "../views/StudentShow.vue";
+import StudentsResumeEdit from "../views/StudentsResumeEdit.vue";
 import StudentsEdit from "../views/StudentsEdit.vue";
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -15,7 +16,12 @@ const routes = [
   {
     path: "/students/:id",
     name: "students-show",
-    component: StudentsShow,
+    component: StudentShow,
+  },
+  {
+    path: "/students/:id/resume/edit",
+    name: "students-resume-edit",
+    component: StudentsResumeEdit,
   },
   {
     path: "/students/:id/edit",
