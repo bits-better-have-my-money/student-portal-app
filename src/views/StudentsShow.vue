@@ -71,8 +71,9 @@ export default {
       currentStudent: {
         first_name: "Bob",
         last_name: "Smith",
-        image_url: "https://unsplash.com/photos/ZPswLOq0FHE",
-        email: "bobsmith@gmailcom",
+        image_url:
+          "https://media.istockphoto.com/photos/private-robert-smith-of-the-royal-canadian-regiment-of-infantry-19th-picture-id1315460248?b=1&k=20&m=1315460248&s=170667a&w=0&h=tk3L5fSC0h00wpLjz0Y15oQ1fEMJ4JkI6BQeVFb034U=",
+        email: "bobsmith@gmail.com",
         phone_number: "555 - 666 - 7777",
         bio: "Grew up in a working class family, and is the first of his family to pursue a higher education. He grinded his way to the top.",
         linkedin_url: "linkedin.com/bob",
@@ -105,7 +106,7 @@ export default {
             description: "AirBnb for tiny homes",
             capstone_url: "github.com/bobsmith/hideaway-huts",
             screenshot:
-              "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.creekwalkcommunity.com%2Fuploads%2F1%2F2%2F6%2F1%2F126144893%2F5-orig_orig.jpg&imgrefurl=https%3A%2F%2Fwww.creekwalkcommunity.com%2Fhomes.html&tbnid=ce34Ps6id8kxuM&vet=12ahUKEwjD68znnuvzAhUFb80KHUw7AB8QMygJegUIARDjAg..i&docid=tPiNGDDYvU61dM&w=1100&h=619&itg=1&q=tiny%20home&ved=2ahUKEwjD68znnuvzAhUFb80KHUw7AB8QMygJegUIARDjAg",
+              "https://media.istockphoto.com/photos/dog-using-laptop-computer-picture-id1049887368?b=1&k=20&m=1049887368&s=170667a&w=0&h=SbkVuFms_tkZ5HW6lulE0ZLve7dNRC3EjfH-KD9nZmY=",
           },
         ],
       },
