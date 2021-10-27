@@ -13,7 +13,6 @@
       <p>{{ currentStudent.twitter_handle }}</p>
       <p>{{ currentStudent.blog_url }}</p>
       <p>{{ currentStudent.github_url }}</p>
-      <p>{{ currentStudent.experiences }}</p>
     </div>
     <div>
       <h1>Experience</h1>
