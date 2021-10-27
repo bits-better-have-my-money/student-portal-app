@@ -32,6 +32,12 @@
         <p>{{ education.details }}</p>
       </div>
     </div>
+    <div>
+      <h1>Skills</h1>
+      <div v-for="skill in skills" v-bind:key="skill.id">
+        <p>{{ skill.name }}</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -73,6 +79,7 @@ export default {
           details: "made some art in college",
         },
       ],
+      skills: [],
     };
   },
   created: function () {
@@ -87,6 +94,10 @@ export default {
     axios.get("/educations/" + this.$route.params.id).then((response) => {
       console.log("student experiences", response);
       this.educations = response.data;
+    });
+    axios.get("/skills/" + this.$route.params.id).then((response) => {
+      console.log("student skills", response);
+      this.skills = response.data;
     });
   },
   methods: {},
