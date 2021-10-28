@@ -50,7 +50,7 @@
 <style></style>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 export default {
   data: function () {
     return {
@@ -76,17 +76,17 @@ export default {
     // });
   },
   methods: {
-    // editStudentInfo: function () {
-    //   axios
-    //     .patch(`/students/${this.currentStudent.id}`, this.currentStudent)
-    //     .then((response) => {
-    //       console.log(response.data);
-    //       this.$router.push(`/students/${response.data.id}`);
-    //     })
-    //     .catch((error) => {
-    //       console.log(error.response.data.errors);
-    // });
-    // },
+    editStudentInfo: function () {
+      axios
+        .patch(`/students/${this.currentStudent.id}`, this.currentStudent)
+        .then((response) => {
+          console.log(response.data);
+          this.$router.push(`/students/${response.data.id}`);
+        })
+        .catch((error) => {
+          console.log(error.response.data.errors);
+        });
+    },
   },
 };
 </script>

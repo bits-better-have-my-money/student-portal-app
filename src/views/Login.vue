@@ -35,8 +35,10 @@ export default {
     submit: function () {
       axios.post("/sessions", this.newSessionParams).then((response) => {
         axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
+        console.log(response.data);
         localStorage.setItem("jwt", response.data.jwt);
-        this.$router.push("/students/" + this.$route.params.id);
+        localStorage.setItem("student_id", response.data.student_id);
+        this.$router.push("/students/" + response.data.student_id);
       });
     },
   },
