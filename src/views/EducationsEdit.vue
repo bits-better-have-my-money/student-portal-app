@@ -37,13 +37,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      editEducationParams: [
-        {
-          start_date: "2021-10-22",
-          end_date: "2021-11-12",
-          degree: "Computer Science",
-        },
-      ],
+      editEducationParams: {},
       errors: [],
     };
   },
