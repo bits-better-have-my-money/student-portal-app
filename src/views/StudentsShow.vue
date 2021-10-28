@@ -7,12 +7,16 @@
         v-bind:alt="currentStudent.name"
       />
       <p>{{ currentStudent.email }}</p>
-      <p>{{ currentStudent.phone_number }}</p>
+      <p>{{ currentStudent.phone }}</p>
       <p>{{ currentStudent.bio }}</p>
       <p>{{ currentStudent.linkedin_URL }}</p>
       <p>{{ currentStudent.twitter_handle }}</p>
       <p>{{ currentStudent.blog_url }}</p>
       <p>{{ currentStudent.github_url }}</p>
+
+      <router-link :to="`/students/${currentStudent.id}/edit`"
+        >Update Student</router-link
+      >
     </div>
     <div>
       <h1>Experience</h1>
@@ -24,6 +28,9 @@
         <h3>{{ experience.job_title }}</h3>
         <p>{{ experience.start_date }} - {{ experience.end_date }}</p>
         <p>{{ experience.details }}</p>
+        <router-link :to="`/experiences/${experience.id}/edit`"
+          >Update Experience</router-link
+        >
       </div>
     </div>
     <div>
@@ -36,12 +43,18 @@
         <h3>{{ education.degree }}</h3>
         <p>{{ education.start_date }} - {{ education.end_date }}</p>
         <p>{{ education.details }}</p>
+        <router-link :to="`/educations/${education.id}/edit`"
+          >Update Education</router-link
+        >
       </div>
     </div>
     <div>
       <h1>Skills</h1>
       <div v-for="skill in currentStudent.skills" v-bind:key="skill.id">
         <p>{{ skill.name }}</p>
+        <router-link :to="`/skills/${skill.id}/edit`"
+          >Update Skills</router-link
+        >
       </div>
     </div>
     <div>
@@ -54,6 +67,9 @@
         <h3>{{ capstone.description }}</h3>
         <p>{{ capstone.capstone_url }}</p>
         <img v-bind:src="capstone.screenshot" v-bind:alt="capstone.name" />
+        <router-link :to="`/capstones/${capstone.id}/edit`"
+          >Update Capstone</router-link
+        >
       </div>
     </div>
   </div>
