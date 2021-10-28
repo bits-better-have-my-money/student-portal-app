@@ -3,11 +3,12 @@
     <div id="nav">
       <router-link to="/login">Login</router-link>
       |
-      <router-link to="/students/:id">Student Show</router-link>
+      <router-link :to="`/students/${getStudentId()}`">Student Show</router-link>
       |
-      <router-link to="/students/:id/resume/edit">Update Resume</router-link>
+      <router-link :to="`/experiences/${getStudentId()}/edit`">Update Resume</router-link>
+      <!-- delete after testing -->
       |
-      <router-link to="/students/:id/edit">Edit Student Info</router-link>
+      <router-link :to="`/students/${getStudentId()}/edit`">Edit Student Info</router-link>
     </div>
     <router-view />
   </div>
@@ -35,3 +36,19 @@
   color: #42b983;
 }
 </style>
+
+<script>
+export default {
+  data: function () {
+    return {};
+  },
+  methods: {
+    // isLoggedIn: function () {
+    //   return localStorage.jwt;
+    // },
+    getStudentId: function () {
+      return localStorage.student_id;
+    },
+  },
+};
+</script>

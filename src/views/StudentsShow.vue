@@ -2,10 +2,7 @@
   <div class="students-show">
     <div>
       <h1>{{ currentStudent.first_name }} {{ currentStudent.last_name }}</h1>
-      <img
-        v-bind:src="currentStudent.image_url"
-        v-bind:alt="currentStudent.name"
-      />
+      <img v-bind:src="currentStudent.image_url" v-bind:alt="currentStudent.name" />
       <p>{{ currentStudent.email }}</p>
       <p>{{ currentStudent.phone_number }}</p>
       <p>{{ currentStudent.bio }}</p>
@@ -16,10 +13,7 @@
     </div>
     <div>
       <h1>Experience</h1>
-      <div
-        v-for="experience in currentStudent.experiences"
-        v-bind:key="experience.id"
-      >
+      <div v-for="experience in currentStudent.experiences" v-bind:key="experience.id">
         <h2>{{ experience.company_name }}</h2>
         <h3>{{ experience.job_title }}</h3>
         <p>{{ experience.start_date }} - {{ experience.end_date }}</p>
@@ -28,10 +22,7 @@
     </div>
     <div>
       <h1>Education</h1>
-      <div
-        v-for="education in currentStudent.educations"
-        v-bind:key="education.id"
-      >
+      <div v-for="education in currentStudent.educations" v-bind:key="education.id">
         <h2>{{ education.university_name }}</h2>
         <h3>{{ education.degree }}</h3>
         <p>{{ education.start_date }} - {{ education.end_date }}</p>
@@ -46,10 +37,7 @@
     </div>
     <div>
       <h1>Capstone</h1>
-      <div
-        v-for="capstone in currentStudent.capstones"
-        v-bind:key="capstone.id"
-      >
+      <div v-for="capstone in currentStudent.capstones" v-bind:key="capstone.id">
         <h2>{{ capstone.name }}</h2>
         <h3>{{ capstone.description }}</h3>
         <p>{{ capstone.capstone_url }}</p>
