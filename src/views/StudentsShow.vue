@@ -15,6 +15,7 @@
     </div>
     <div>
       <h1>Experience</h1>
+      <router-link :to="`/experiences/new`">New Experience</router-link>
       <div v-for="experience in currentStudent.experiences" v-bind:key="experience.id">
         <h2>{{ experience.company_name }}</h2>
         <h3>{{ experience.job_title }}</h3>
@@ -25,6 +26,7 @@
     </div>
     <div>
       <h1>Education</h1>
+      <router-link :to="`/educations/new`">New Education</router-link>
       <div v-for="education in currentStudent.educations" v-bind:key="education.id">
         <h2>{{ education.university_name }}</h2>
         <h3>{{ education.degree }}</h3>
@@ -35,6 +37,7 @@
     </div>
     <div>
       <h1>Skills</h1>
+      <router-link :to="`/skills/new`">New Skill</router-link>
       <div v-for="skill in currentStudent.skills" v-bind:key="skill.id">
         <p>{{ skill.name }}</p>
         <router-link :to="`/skills/${skill.id}/edit`">Update Skills</router-link>
@@ -42,6 +45,7 @@
     </div>
     <div>
       <h1>Capstone</h1>
+      <router-link :to="`/capstones/new`">New Capstone</router-link>
       <div v-for="capstone in currentStudent.capstones" v-bind:key="capstone.id">
         <h2>{{ capstone.name }}</h2>
         <h3>{{ capstone.description }}</h3>
