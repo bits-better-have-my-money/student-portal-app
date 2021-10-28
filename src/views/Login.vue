@@ -25,8 +25,8 @@ export default {
   data: function () {
     return {
       newSessionParams: {
-        email: "abrahamlincoln@gmail.com",
-        password: "password",
+        email: "",
+        password: "",
       },
       errors: [],
     };
