@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Login from "../views/Login.vue";
 import StudentsShow from "../views/StudentsShow.vue";
-import ExperiencesEdit from "../views/StudentsResumeEdit.vue";
+import ExperiencesEdit from "../views/ExperiencesEdit.vue";
 import StudentsEdit from "../views/StudentsEdit.vue";
 import EducationsEdit from "../views/EducationsEdit.vue";
 
