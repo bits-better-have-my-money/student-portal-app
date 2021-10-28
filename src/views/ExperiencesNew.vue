@@ -1,12 +1,12 @@
 <template>
-  <div class="experiences-edit">
-    <form v-on:submit.prevent="editExperience()">
-      <h1>Update Experience</h1>
+  <div class="experiences-new">
+    <form v-on:submit.prevent="createExperience()">
+      <h1>Add Experience</h1>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
       <div>
-        <br />
+        <h2>Experience</h2>
         <label>Start Date:</label>
         <input type="date" v-model="editExperienceParams.start_date" />
         <br />
@@ -23,8 +23,8 @@
         <input type="text" v-model="editExperienceParams.details" />
         <br />
       </div>
-      <input v-on:click="editExperience()" type="submit" value="Update" />
-      <input v-on:click="destroyExperience()" type="submit" value="Delete" />
+      <input v-on:click="createExperience()" type="submit" value="Add" />
+      <input v-on:click="cancel()" type="submit" value="Cancel" />
     </form>
   </div>
 </template>
@@ -44,38 +44,27 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      editExperienceParams: {},
+      editExperienceParams: {
+        student_id: localStorage.student_id,
+      },
       errors: [],
     };
   },
-  created: function () {
-    axios.get(`/experiences/${this.$route.params.id}`).then((response) => {
-      console.log(response.data);
-      this.editExperienceParams = response.data;
-    });
-  },
   methods: {
-    editExperience: function () {
+    createExperience: function () {
       axios
-        .patch(`/experiences/${this.editExperienceParams.id}`, this.editExperienceParams)
+        .post(`/experiences`, this.editExperienceParams)
         .then((response) => {
-          console.log("Experience edit", response);
+          console.log("Experience create", response);
+          console.log(this.editExperienceParams);
           this.$router.push(`/students/${this.editExperienceParams.student_id}`);
         })
         .catch((error) => {
           this.errors = error.response.data.errors;
         });
     },
-    destroyExperience: function () {
-      axios
-        .delete(`/experiences/${this.editExperienceParams.id}`)
-        .then((response) => {
-          console.log("Experience destroyed", response);
-          this.$router.push(`/students/${this.editExperienceParams.student_id}`);
-        })
-        .catch((error) => {
-          this.errors = error.response.data.errors;
-        });
+    cancel: function () {
+      this.$router.push(`/students/${this.editExperienceParams.student_id}`);
     },
   },
 };
