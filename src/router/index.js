@@ -2,9 +2,9 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Login from "../views/Login.vue";
 import StudentsShow from "../views/StudentsShow.vue";
-import StudentsResumeEdit from "../views/StudentsResumeEdit.vue";
+import ExperiencesEdit from "../views/StudentsResumeEdit.vue";
 import StudentsEdit from "../views/StudentsEdit.vue";
-import StudentsEducationEdit from "../views/StudentsEdit.vue";
+import EducationsEdit from "../views/EducationsEdit.vue";
 
 Vue.use(VueRouter);
 
@@ -20,9 +20,9 @@ const routes = [
     component: StudentsShow,
   },
   {
-    path: "/students/:id/resume/edit",
-    name: "students-resume-edit",
-    component: StudentsResumeEdit,
+    path: "/experiences/:id/edit",
+    name: "experiences-edit",
+    component: ExperiencesEdit,
   },
   {
     path: "/students/:id/edit",
@@ -30,9 +30,9 @@ const routes = [
     component: StudentsEdit,
   },
   {
-    path: "/students/:id/education/edit",
-    name: "students-education-edit",
-    component: StudentsEducationEdit,
+    path: "/educations/:id/edit",
+    name: "educations-edit",
+    component: EducationsEdit,
   },
 ];
 

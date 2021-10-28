@@ -5,9 +5,11 @@
       |
       <router-link to="/students/:id">Student Show</router-link>
       |
-      <router-link to="/students/:id/resume/edit">Update Resume</router-link>
+      <router-link to="/experiences/:id/edit">Update Resume</router-link>
       |
       <router-link to="/students/:id/edit">Edit Student Info</router-link>
+      |
+      <router-link to="/educations/:id/edit">Edit Education Info</router-link>
     </div>
     <router-view />
   </div>
