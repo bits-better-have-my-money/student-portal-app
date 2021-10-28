@@ -26,7 +26,6 @@
         <input type="text" v-model="editEducationParams.details" />
       </div>
       <input type="submit" v-on:click="editEducationInfo()" value="Update" />
-      <input type="submit" v-on:click="destroyEducationInfo()" value="Destroy" />
     </form>
   </div>
 </template>
