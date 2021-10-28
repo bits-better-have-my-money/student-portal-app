@@ -62,66 +62,67 @@
 <style></style>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 
 export default {
   data: function () {
     return {
-      currentStudent: {
-        id: 1,
-        first_name: "Bob",
-        last_name: "Smith",
-        image_url:
-          "https://media.istockphoto.com/photos/private-robert-smith-of-the-royal-canadian-regiment-of-infantry-19th-picture-id1315460248?b=1&k=20&m=1315460248&s=170667a&w=0&h=tk3L5fSC0h00wpLjz0Y15oQ1fEMJ4JkI6BQeVFb034U=",
-        email: "bobsmith@gmail.com",
-        phone_number: "555 - 666 - 7777",
-        bio: "Grew up in a working class family, and is the first of his family to pursue a higher education. He grinded his way to the top.",
-        linkedin_url: "linkedin.com/bob",
-        twitter_handle: "twitter.com/bob",
-        blog_url: "blog.com/bob",
-        github_url: "github.com/bob",
-        experiences: [
-          {
-            id: 1,
-            start_date: "01 / 01 / 21",
-            end_date: "12 / 13 / 21",
-            job_title: "Package Handler",
-            company_title: "Fedex Ground",
-            details: "loads and unloads packages from trucks",
-          },
-        ],
-        educations: [
-          {
-            id: 1,
-            start_date: "01 / 01 / 20",
-            end_date: "12 / 13 / 20",
-            degree: "Art",
-            university_name: "UWEC",
-            details: "made some art in college",
-          },
-        ],
-        skills: [
-          { id: 1, name: "Ruby" },
-          { id: 2, name: "Rails" },
-        ],
-        capstones: [
-          {
-            id: 1,
-            name: "Hideaway Huts",
-            description: "AirBnb for tiny homes",
-            capstone_url: "github.com/bobsmith/hideaway-huts",
-            screenshot:
-              "https://media.istockphoto.com/photos/dog-using-laptop-computer-picture-id1049887368?b=1&k=20&m=1049887368&s=170667a&w=0&h=SbkVuFms_tkZ5HW6lulE0ZLve7dNRC3EjfH-KD9nZmY=",
-          },
-        ],
-      },
+      currentStudent: {},
+      // currentStudent: {
+      //   id: 1,
+      //   first_name: "Bob",
+      //   last_name: "Smith",
+      //   image_url:
+      //     "https://media.istockphoto.com/photos/private-robert-smith-of-the-royal-canadian-regiment-of-infantry-19th-picture-id1315460248?b=1&k=20&m=1315460248&s=170667a&w=0&h=tk3L5fSC0h00wpLjz0Y15oQ1fEMJ4JkI6BQeVFb034U=",
+      //   email: "bobsmith@gmail.com",
+      //   phone_number: "555 - 666 - 7777",
+      //   bio: "Grew up in a working class family, and is the first of his family to pursue a higher education. He grinded his way to the top.",
+      //   linkedin_url: "linkedin.com/bob",
+      //   twitter_handle: "twitter.com/bob",
+      //   blog_url: "blog.com/bob",
+      //   github_url: "github.com/bob",
+      //   experiences: [
+      //     {
+      //       id: 1,
+      //       start_date: "01 / 01 / 21",
+      //       end_date: "12 / 13 / 21",
+      //       job_title: "Package Handler",
+      //       company_title: "Fedex Ground",
+      //       details: "loads and unloads packages from trucks",
+      //     },
+      //   ],
+      //   educations: [
+      //     {
+      //       id: 1,
+      //       start_date: "01 / 01 / 20",
+      //       end_date: "12 / 13 / 20",
+      //       degree: "Art",
+      //       university_name: "UWEC",
+      //       details: "made some art in college",
+      //     },
+      //   ],
+      //   skills: [
+      //     { id: 1, name: "Ruby" },
+      //     { id: 2, name: "Rails" },
+      //   ],
+      //   capstones: [
+      //     {
+      //       id: 1,
+      //       name: "Hideaway Huts",
+      //       description: "AirBnb for tiny homes",
+      //       capstone_url: "github.com/bobsmith/hideaway-huts",
+      //       screenshot:
+      //         "https://media.istockphoto.com/photos/dog-using-laptop-computer-picture-id1049887368?b=1&k=20&m=1049887368&s=170667a&w=0&h=SbkVuFms_tkZ5HW6lulE0ZLve7dNRC3EjfH-KD9nZmY=",
+      //     },
+      //   ],
+      // },
     };
   },
   created: function () {
-    // axios.get("/students/" + this.$route.params.id).then((response) => {
-    //   console.log("student show", response);
-    //   this.currentStudent = response.data;
-    // });
+    axios.get("/students/" + this.$route.params.id).then((response) => {
+      console.log("student show", response);
+      this.currentStudent = response.data;
+    });
   },
   methods: {},
 };
