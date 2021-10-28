@@ -4,6 +4,7 @@ import Login from "../views/Login.vue";
 import StudentsShow from "../views/StudentsShow.vue";
 import ExperiencesEdit from "../views/ExperiencesEdit.vue";
 import StudentsEdit from "../views/StudentsEdit.vue";
+import EducationsEdit from "../views/EducationsEdit.vue";
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: "/students/:id/edit",
     name: "students-edit",
     component: StudentsEdit,
+  },
+  {
+    path: "/educations/:id/edit",
+    name: "educations-edit",
+    component: EducationsEdit,
   },
 ];
 
