@@ -44,7 +44,7 @@
         <p>{{ education.start_date }} - {{ education.end_date }}</p>
         <p>{{ education.details }}</p>
         <router-link :to="`/educations/${education.id}/edit`"
-          >Update Experience</router-link
+          >Update Education</router-link
         >
       </div>
     </div>
@@ -53,7 +53,7 @@
       <div v-for="skill in currentStudent.skills" v-bind:key="skill.id">
         <p>{{ skill.name }}</p>
         <router-link :to="`/skills/${skill.id}/edit`"
-          >Update Experience</router-link
+          >Update Skills</router-link
         >
       </div>
     </div>
@@ -68,7 +68,7 @@
         <p>{{ capstone.capstone_url }}</p>
         <img v-bind:src="capstone.screenshot" v-bind:alt="capstone.name" />
         <router-link :to="`/capstones/${capstone.id}/edit`"
-          >Update Experience</router-link
+          >Update Capstone</router-link
         >
       </div>
     </div>
