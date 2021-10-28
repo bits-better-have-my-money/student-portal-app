@@ -4,7 +4,7 @@
       <h1>{{ currentStudent.first_name }} {{ currentStudent.last_name }}</h1>
       <img v-bind:src="currentStudent.image_url" v-bind:alt="currentStudent.name" />
       <p>{{ currentStudent.email }}</p>
-      <p>{{ currentStudent.phone }}</p>
+      <p>{{ currentStudent.phone_number }}</p>
       <p>{{ currentStudent.bio }}</p>
       <p>{{ currentStudent.linkedin_URL }}</p>
       <p>{{ currentStudent.twitter_handle }}</p>
